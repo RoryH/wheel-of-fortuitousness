@@ -1,0 +1,35 @@
+html, body {
+  font-family: Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wheel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  counter-reset: tile;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 50% 0;
+}
+
+.tile {
+  width: 50%;
+  min-height: 10em;
+  background-color: red;
+  align-self: center;
+  margin: 1em;
+  box-shadow: 0 0 5px #000;
+}
+
+.tile::after {
+  margin-left: 8px;
+  counter-increment: tile;
+  content: counter(tile);
+}
